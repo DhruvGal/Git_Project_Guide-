@@ -14,7 +14,7 @@ This is a demonstration file for Assignment 2.
 This section will change depending on the branch
 
 
-## Example Plor
+## Example Plot
 
 ```{r}
 plot(1:10, 1:10, main = "A Simple Plot")
@@ -59,5 +59,37 @@ git branch -M main
 ```bash
 git push -u origin main
 ```
+
+
+
+
+## Step 3: Create a New Branch and Make Changes
+
+To simulate collaborative development, I created a new branch called `testbranch`, made a change to the `example.qmd` file, committed the update, and pushed the branch to GitHub.
+
+### Why this step matters:
+Using branches allows developers to experiment or work on features in isolation without affecting the main project. It supports safer collaboration and better version tracking.
+
+### Bash Commands Used:
+
+```bash
+# Create and switch to a new branch
+git checkout -b testbranch
+```
+
+### Edit example.qmd (e.g., add a new section)
+### After saving the file, stage and commit the changes
+```bash
+git add example.qmd
+git commit -m "Added new Git section in testbranch"
+```
+
+### Push the new branch to GitHub
+```bash
+git push -u origin testbranch
+```
+
+
+This is a line added in the test branch
 
 

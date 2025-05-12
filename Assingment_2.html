@@ -111,8 +111,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="git-branch-demo">Git Branch Demo</h2>
 <p>This section will change depending on the branch</p>
 </section>
-<section id="example-plor" class="level2">
-<h2 class="anchored" data-anchor-id="example-plor">Example Plor</h2>
+<section id="example-plot" class="level2">
+<h2 class="anchored" data-anchor-id="example-plot">Example Plot</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">"A Simple Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-2-initialise-git-and-push-to-github">Step 2: Initialise Git and Push to GitHub</h2>
 <p>After setting up the RStudio project and writing this <code>example.qmd</code> file, I used the terminal to initialise version control using Git and connect it to a GitHub repository.</p>
 <section id="why-this-step-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-step-matters">✅ Why this step matters:</h3>
+<h3 class="anchored" data-anchor-id="why-this-step-matters">Why this step matters:</h3>
 <p>Initialising Git allows version tracking of all changes made in the project. Connecting to GitHub enables cloud backup and collaboration.</p>
 </section>
 <section id="bash-commands-used" class="level3">
@@ -155,6 +155,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="push-changes-to-github-and-set-upstream" class="level3">
 <h3 class="anchored" data-anchor-id="push-changes-to-github-and-set-upstream">Push changes to GitHub and set upstream</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="step-3-create-a-new-branch-and-make-changes" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-create-a-new-branch-and-make-changes">Step 3: Create a New Branch and Make Changes</h2>
+<p>To simulate collaborative development, I created a new branch called <code>testbranch</code>, made a change to the <code>example.qmd</code> file, committed the update, and pushed the branch to GitHub.</p>
+<section id="why-this-step-matters-1" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-step-matters-1">Why this step matters:</h3>
+<p>Using branches allows developers to experiment or work on features in isolation without affecting the main project. It supports safer collaboration and better version tracking.</p>
+</section>
+<section id="bash-commands-used-1" class="level3">
+<h3 class="anchored" data-anchor-id="bash-commands-used-1">Bash Commands Used:</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and switch to a new branch</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="edit-example.qmd-e.g.-add-a-new-section" class="level3">
+<h3 class="anchored" data-anchor-id="edit-example.qmd-e.g.-add-a-new-section">Edit example.qmd (e.g., add a new section)</h3>
+</section>
+<section id="after-saving-the-file-stage-and-commit-the-changes" class="level3">
+<h3 class="anchored" data-anchor-id="after-saving-the-file-stage-and-commit-the-changes">After saving the file, stage and commit the changes</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Added new Git section in testbranch"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="push-the-new-branch-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-the-new-branch-to-github">Push the new branch to GitHub</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 
