@@ -154,5 +154,26 @@ git commit -m "Conflicting edit in example.qmd on main"
 git push
 ```
 
+## Step 6: Merge `testbranch` into `main` and Resolve Conflict
 
+Now that both `main` and `testbranch` have conflicting changes to the same part of `example.qmd`, I attempted to merge `testbranch` into `main`. As expected, Git detected a conflict.
 
+### Why this step matters:
+Conflicts are a natural part of collaborative development. Resolving them cleanly is crucial to maintaining a functioning codebase.
+
+### Bash Commands Used:
+
+```bash
+# Ensure we are on main
+git checkout main
+```
+
+```bash
+# Pull latest changes to main (if needed)
+git pull
+```
+
+```bash
+# Merge testbranch into main|
+git merge testbranch
+```
