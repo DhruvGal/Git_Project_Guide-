@@ -25,7 +25,7 @@ plot(1:10, 1:10, main = "A Simple Plot")
 
 After setting up the RStudio project and writing this `example.qmd` file, I used the terminal to initialise version control using Git and connect it to a GitHub repository.
 
-### Why this step matters:
+### ✅ Why this step matters:
 Initialising Git allows version tracking of all changes made in the project. Connecting to GitHub enables cloud backup and collaboration.
 
 ### 💻 Bash Commands Used:
@@ -60,4 +60,4 @@ git branch -M main
 git push -u origin main
 ```
 
-
+This line is added in the main branch
