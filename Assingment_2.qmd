@@ -60,7 +60,6 @@ git branch -M main
 git push -u origin main
 ```
 
-
 This line is added in the main branch
 
 
@@ -181,3 +180,22 @@ git pull
 git merge testbranch
 ```
 
+
+## Step 7: Tag the Final Commit as v1.0
+
+After resolving the merge conflict and committing the result, I created an annotated tag named `v1.0` to mark this as the first stable version of the project.
+
+### Why this step matters:
+Tags are used to capture important points in a project’s history (e.g., releases). Annotated tags include metadata like tagger name, date, and a message.
+
+### Bash Commands Used:
+
+```bash
+# Create an annotated tag
+git tag -a v1.0 -m "Version 1.0 after resolving merge conflict"
+```
+
+```bash
+# Push the tag to GitHub
+git push origin v1.0
+```
