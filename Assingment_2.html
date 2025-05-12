@@ -180,7 +180,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="push-the-new-branch-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="push-the-new-branch-to-github">Push the new branch to GitHub</h3>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a line added in the test branch</p>
 </section>
+</section>
+<section id="step-4-add-data-folder-and-amend-previous-commit" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-add-data-folder-and-amend-previous-commit">Step 4: Add Data Folder and Amend Previous Commit</h2>
+<p>To track the dataset used in Assignment 1, I created a <code>data/</code> folder and included relevant files. Instead of making a new commit, I amended the previous one to keep the commit history clean.</p>
+<section id="why-this-step-matters-2" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-step-matters-2">Why this step matters:</h3>
+<p>Amending commits is useful for minor corrections to the most recent commit — such as adding forgotten files — without cluttering the history.</p>
+</section>
+<section id="actions-taken" class="level3">
+<h3 class="anchored" data-anchor-id="actions-taken">Actions Taken:</h3>
+<ol type="1">
+<li>Created a folder called <code>data/</code> in the RStudio project directory.</li>
+<li>Copied the Assignment 1 dataset(s) into the <code>data/</code> folder (e.g., <code>dataset.csv</code>).</li>
+<li>Amended the previous commit to include this new folder.</li>
+</ol>
+</section>
+<section id="bash-commands-used-2" class="level3">
+<h3 class="anchored" data-anchor-id="bash-commands-used-2">Bash Commands Used:</h3>
+</section>
+<section id="create-the-data-folder-and-add-files-manually-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-data-folder-and-add-files-manually-in-rstudio">Create the data folder and add files manually in RStudio</h3>
+</section>
+<section id="stage-the-new-folder" class="level3">
+<h3 class="anchored" data-anchor-id="stage-the-new-folder">Stage the new folder</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="amend-the-most-recent-commit-to-include-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="amend-the-most-recent-commit-to-include-the-data">Amend the most recent commit to include the data</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">--no-edit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="push-the-amended-commit-force-is-required" class="level3">
+<h3 class="anchored" data-anchor-id="push-the-amended-commit-force-is-required">Push the amended commit (force is required)</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--force</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="step-5-modify-main-to-cause-a-conflict-with-testbranch" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-modify-main-to-cause-a-conflict-with-testbranch">Step 5: Modify <code>main</code> to Cause a Conflict with <code>testbranch</code></h2>
+<p>After pushing changes from <code>testbranch</code>, I switched back to the <code>main</code> branch and made a conflicting edit to the same section of <code>example.qmd</code>. This ensures a conflict when merging later.</p>
+<section id="why-this-step-matters-3" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-step-matters-3">Why this step matters:</h3>
+<p>Conflicts naturally occur in collaborative workflows. This step demonstrates how to simulate and later resolve a conflict — a key Git skill.</p>
+</section>
+<section id="bash-commands-used-3" class="level3">
+<h3 class="anchored" data-anchor-id="bash-commands-used-3">Bash Commands Used:</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Switch back to main branch</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="edit-example.qmd-in-the-same-section-modified-in-testbranch" class="level3">
+<h3 class="anchored" data-anchor-id="edit-example.qmd-in-the-same-section-modified-in-testbranch">Edit example.qmd in the same section modified in testbranch</h3>
+</section>
+<section id="e.g.-rewrite-or-reword-the-branching-section" class="level3">
+<h3 class="anchored" data-anchor-id="e.g.-rewrite-or-reword-the-branching-section">(e.g., rewrite or reword the “Branching” section)</h3>
+</section>
+<section id="save-the-file-then-stage-and-commit" class="level3">
+<h3 class="anchored" data-anchor-id="save-the-file-then-stage-and-commit">Save the file, then stage and commit</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Conflicting edit in example.qmd on main"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="push-the-change-to-remote" class="level1">
+<h1>Push the change to remote</h1>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 </main>

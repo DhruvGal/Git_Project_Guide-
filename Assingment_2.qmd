@@ -92,4 +92,67 @@ git push -u origin testbranch
 
 This is a line added in the test branch
 
+## Step 4: Add Data Folder and Amend Previous Commit
+
+To track the dataset used in Assignment 1, I created a `data/` folder and included relevant files. Instead of making a new commit, I amended the previous one to keep the commit history clean.
+
+### Why this step matters:
+Amending commits is useful for minor corrections to the most recent commit — such as adding forgotten files — without cluttering the history.
+
+### Actions Taken:
+1. Created a folder called `data/` in the RStudio project directory.
+2. Copied the Assignment 1 dataset(s) into the `data/` folder (e.g., `dataset.csv`).
+3. Amended the previous commit to include this new folder.
+
+
+
+### Bash Commands Used:
+
+### Create the data folder and add files manually in RStudio
+
+### Stage the new folder
+```bash
+git add data/
+```
+
+### Amend the most recent commit to include the data
+```bash
+git commit --amend --no-edit
+```
+
+### Push the amended commit (force is required)
+```bash
+git push --force
+```
+
+
+## Step 5: Modify `main` to Cause a Conflict with `testbranch`
+
+After pushing changes from `testbranch`, I switched back to the `main` branch and made a conflicting edit to the same section of `example.qmd`. This ensures a conflict when merging later.
+
+### Why this step matters:
+Conflicts naturally occur in collaborative workflows. This step demonstrates how to simulate and later resolve a conflict — a key Git skill.
+
+### Bash Commands Used:
+
+```bash
+# Switch back to main branch
+git checkout main
+```
+
+### Edit example.qmd in the same section modified in testbranch
+### (e.g., rewrite or reword the “Branching” section)
+
+### Save the file, then stage and commit
+```bash
+git add example.qmd
+git commit -m "Conflicting edit in example.qmd on main"
+```
+
+# Push the change to remote
+```bash
+git push
+```
+
+
 
