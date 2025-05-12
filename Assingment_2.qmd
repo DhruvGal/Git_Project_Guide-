@@ -14,7 +14,7 @@ This is a demonstration file for Assignment 2.
 This section will change depending on the branch
 
 
-## Example Plor
+## Example Plot
 
 ```{r}
 plot(1:10, 1:10, main = "A Simple Plot")
@@ -25,7 +25,7 @@ plot(1:10, 1:10, main = "A Simple Plot")
 
 After setting up the RStudio project and writing this `example.qmd` file, I used the terminal to initialise version control using Git and connect it to a GitHub repository.
 
-### ✅ Why this step matters:
+### Why this step matters:
 Initialising Git allows version tracking of all changes made in the project. Connecting to GitHub enables cloud backup and collaboration.
 
 ### 💻 Bash Commands Used:
@@ -60,4 +60,124 @@ git branch -M main
 git push -u origin main
 ```
 
+
 This line is added in the main branch
+
+
+
+
+## Step 3: Create a New Branch and Make Changes
+
+To simulate collaborative development, I created a new branch called `testbranch`, made a change to the `example.qmd` file, committed the update, and pushed the branch to GitHub.
+
+### Why this step matters:
+Using branches allows developers to experiment or work on features in isolation without affecting the main project. It supports safer collaboration and better version tracking.
+
+### Bash Commands Used:
+
+```bash
+# Create and switch to a new branch
+git checkout -b testbranch
+```
+
+### Edit example.qmd (e.g., add a new section)
+### After saving the file, stage and commit the changes
+```bash
+git add example.qmd
+git commit -m "Added new Git section in testbranch"
+```
+
+### Push the new branch to GitHub
+```bash
+git push -u origin testbranch
+```
+
+
+This is a line added in the test branch
+
+## Step 4: Add Data Folder and Amend Previous Commit
+
+To track the dataset used in Assignment 1, I created a `data/` folder and included relevant files. Instead of making a new commit, I amended the previous one to keep the commit history clean.
+
+### Why this step matters:
+Amending commits is useful for minor corrections to the most recent commit — such as adding forgotten files — without cluttering the history.
+
+### Actions Taken:
+1. Created a folder called `data/` in the RStudio project directory.
+2. Copied the Assignment 1 dataset(s) into the `data/` folder (e.g., `dataset.csv`).
+3. Amended the previous commit to include this new folder.
+
+
+
+### Bash Commands Used:
+
+### Create the data folder and add files manually in RStudio
+
+### Stage the new folder
+```bash
+git add data/
+```
+
+### Amend the most recent commit to include the data
+```bash
+git commit --amend --no-edit
+```
+
+### Push the amended commit (force is required)
+```bash
+git push --force
+```
+
+
+## Step 5: Modify `main` to Cause a Conflict with `testbranch`
+
+After pushing changes from `testbranch`, I switched back to the `main` branch and made a conflicting edit to the same section of `example.qmd`. This ensures a conflict when merging later.
+
+### Why this step matters:
+Conflicts naturally occur in collaborative workflows. This step demonstrates how to simulate and later resolve a conflict — a key Git skill.
+
+### Bash Commands Used:
+
+```bash
+# Switch back to main branch
+git checkout main
+```
+
+### Edit example.qmd in the same section modified in testbranch
+### (e.g., rewrite or reword the “Branching” section)
+
+### Save the file, then stage and commit
+```bash
+git add example.qmd
+git commit -m "Conflicting edit in example.qmd on main"
+```
+
+# Push the change to remote
+```bash
+git push
+```
+
+## Step 6: Merge `testbranch` into `main` and Resolve Conflict
+
+Now that both `main` and `testbranch` have conflicting changes to the same part of `example.qmd`, I attempted to merge `testbranch` into `main`. As expected, Git detected a conflict.
+
+### Why this step matters:
+Conflicts are a natural part of collaborative development. Resolving them cleanly is crucial to maintaining a functioning codebase.
+
+### Bash Commands Used:
+
+```bash
+# Ensure we are on main
+git checkout main
+```
+
+```bash
+# Pull latest changes to main (if needed)
+git pull
+```
+
+```bash
+# Merge testbranch into main|
+git merge testbranch
+```
+
